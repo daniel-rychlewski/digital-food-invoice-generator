@@ -2,6 +2,8 @@
 
 A Python-based Cloud Functions endpoint to automate sending invoices to clients when the payable due depends on the order value of their customers due to commission-based pricing.
 
+![Invoice](invoice_email.png)
+
 ## Deployment
 Choose the correct `SERVICE_ACCOUNT_JSON` in `main.py` first. Then run:
 
