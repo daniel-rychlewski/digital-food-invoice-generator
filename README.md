@@ -9,7 +9,12 @@ Choose the correct `SERVICE_ACCOUNT_JSON` in `main.py` first. Then run:
 
 gcloud functions deploy generateInvoice --region europe-west6 --runtime python39 --trigger-http --allow-unauthenticated
 
+Alternatively, when you create the trigger via the cloud console, things will look like the following.
+
+![Cloud console](cloud_scheduler.png)
+
 ## Testing
+```
 curl --location --request POST 'redacted' \
 --header 'Content-Type: application/json' \
 --data-raw '{
@@ -19,8 +24,10 @@ curl --location --request POST 'redacted' \
         "document": "redacted",
         "email": "redacted"
 }'
+```
 
 ## Scheduling (enter in Git Bash instead of cmd)
+```
 gcloud scheduler jobs create http generateInvoiceMonthly \
     --schedule="0 8 1 * *" \
     --uri="redacted" \
@@ -34,3 +41,4 @@ gcloud scheduler jobs create http generateInvoiceMonthly \
         "document": "redacted",
         "email": "redacted"
     }'
+```
